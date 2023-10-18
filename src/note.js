@@ -1,6 +1,6 @@
 import { insertDB, saveDB, getDB } from "./db.js";
 
-export const newNote = async (note) {
+export const newNote = async (note, tags) => {
   const newNote = {
     tags,
     content: note,
@@ -11,7 +11,7 @@ export const newNote = async (note) {
   return newNote
 }
 
-export const getAllNotes(){
+export const getAllNotes = async () => {
   const { notes } = await getDB()
   return notes
 }
