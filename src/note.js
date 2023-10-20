@@ -25,7 +25,7 @@ export const findNotes = async (wanted) => {
 
 export const removeNote = async (id) => {
   const { notes } = await getDB();
-  const match = notes.filter((note) => note.id == id);
+  const match = notes.find((note) => note.id == id);
 
   if (match) {
     const newNotes = notes.filter((note) => note.id != id);
